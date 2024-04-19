@@ -11,9 +11,7 @@ RUN set -eux; \
         ca-certificates \
         gnupg \
         gosu \
-        hostname \
         curl \
-        zstd \
         htop
 
 # import pub key
@@ -41,8 +39,8 @@ RUN set -eux; \
     mkdir -p /etc/mongo; \
     chown mongodb:mongodb /etc/mongo
 
-COPY --chown=root:root --chmod=0725 build/empty /etc/mongo/mongod.conf
-COPY --chown=mongodb:mongodb --chmod=0400 build/empty /etc/mongo/mongo.keyfile
+COPY build/empty /etc/mongo/mongod.conf
+COPY build/empty /etc/mongo/mongo.keyfile
 COPY build/start-mongo.sh /usr/bin/start-mongo.sh
     
 # /var/lib/mongodb
