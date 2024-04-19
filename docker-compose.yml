@@ -3,7 +3,7 @@ version: '3.9'
 services:
   mongo_stwp:
     image: mongo_stwp
-    restart: always
+    restart: unless-stopped
     container_name: "mongo_stwp"
     ports:
         - "27017:27017"
