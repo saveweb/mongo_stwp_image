@@ -11,3 +11,7 @@ services:
     volumes:
         - ./data/db:/var/lib/mongodb
         - ./etc/mongo:/etc/mongo/
+    network_mode: "bridge"
+    # do not let compose create a *_default network, use bridge instead so that we can
+    # easily enable ipv6 with minimal configuration
+    # https://docs.docker.com/config/daemon/ipv6/#use-ipv6-for-the-default-bridge-network
