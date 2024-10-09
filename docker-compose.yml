@@ -13,6 +13,8 @@ services:
     volumes:
         - ./data/db:/var/lib/mongodb
         - ./etc/mongo:/etc/mongo/
+    environment:
+      - GLIBC_TUNABLES=glibc.pthread.rseq=0
     network_mode: "bridge"
     # do not let compose create a *_default network, use bridge instead so that we can
     # easily enable ipv6 with minimal configuration
