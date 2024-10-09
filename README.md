@@ -2,12 +2,14 @@
 
 ## How to use this image
 
-
+<!-- 
 - Build the image
 
 ```bash
 docker build . -t mongo_stwp
-```
+``` -->
+
+`cp docker-compose.override.yml.example docker-compose.override.yml`
 
 - Run the container `docker compose up` to initialize the container
 

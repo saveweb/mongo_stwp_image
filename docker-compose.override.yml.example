@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  mongo_stwp:
+    ports:
+        - "27017:27017"
+    hostname: test-mongo # hostname is needed for replica set
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 64000
+        hard: 64000
