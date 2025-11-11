@@ -22,7 +22,7 @@ RUN set -eux; \
 
 # add repo
 RUN set -eux; \
-    echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] http://repo.mongodb.org/apt/debian bookworm/mongodb-org/8.0 main" | tee /etc/apt/sources.list.d/mongodb-org-8.0.list
+    echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] http://repo.mongodb.org/apt/debian bookworm/mongodb-org/8.2 main" | tee /etc/apt/sources.list.d/mongodb-org-8.2.list
 
 # install mongodb
 RUN set -eux; \
@@ -46,6 +46,5 @@ COPY build/start-mongo.sh /usr/bin/start-mongo.sh
 # /var/lib/mongodb
 VOLUME /var/lib/mongodb
 
-EXPOSE 27017
 
 CMD ["/bin/bash", "/usr/bin/start-mongo.sh"]
