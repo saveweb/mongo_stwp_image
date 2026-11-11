@@ -15,13 +15,13 @@ RUN set -eux; \
 
 # import pub key
 RUN set -eux; \
-    curl -fsSL https://pgp.mongodb.com/server-8.0.asc | \
-    gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg \
+    curl -fsSL https://pgp.mongodb.com/server-9.asc | \
+    gpg -o /usr/share/keyrings/mongodb-server-9.gpg \
     --dearmor
 
 # add repo
 RUN set -eux; \
-    echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/debian bookworm/mongodb-org/8.3 main" | tee /etc/apt/sources.list.d/mongodb-org-8.3.list
+    echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-9.gpg ] https://repo.mongodb.org/apt/debian bookworm/mongodb-org/9.0 main" | tee /etc/apt/sources.list.d/mongodb-org-9.0.list
 
 # install mongodb
 RUN set -eux; \
